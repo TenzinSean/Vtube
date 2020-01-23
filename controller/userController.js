@@ -1,5 +1,6 @@
 import routes from "../routes";
 
+// GETJoin
 export const getJoin = (req, res) => {
     res.render("join", { pageTitle: "Join"});
 };
@@ -17,8 +18,20 @@ export const postJoin = (req, res) => {
     }
 };
 
-export const login = (req, res) => res.render("login", { pageTitle: "login"});
-export const logout = (req, res) => res.render("logout", { pageTitle: "logout"});
+
+//GETLogin
+export const getLogin = (req, res) => res.render("login", { pageTitle: "login"});
+export const postLogin = (req, res) => {
+    res.redirect(routes.home);
+};
+
+
+//LOGOUT
+export const logout = (req, res) => {
+    res.redirect(routes.home);
+}
+
+
 export const userDetail = (req, res) => res.render("userDetail", { pageTitle: "UserDetail"});
 export const editProfile = (req, res) => res.render("editProfile", { pageTitle: "EditProfile"});
 export const changePassword = (req, res) => res.render("changePassword", {pageTitle: "ChangePassword"});
